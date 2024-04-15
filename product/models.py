@@ -24,8 +24,6 @@ class Main_Category(models.Model):
 
     def __str__(self):
         return self.title
-
-
 class Category(models.Model):
     title = models.CharField(max_length=50)
     main_category = models.ForeignKey(Main_Category,on_delete=models.CASCADE)
@@ -42,8 +40,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title + '--' + self.main_category.title
-
-
 class Sub_Category(models.Model):
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
@@ -60,8 +56,6 @@ class Sub_Category(models.Model):
 
     def __str__(self):
         return self.title + '--' + self.category.title
-
-
 class Brand(models.Model):
     title = models.CharField(max_length=50)
     image=models.ImageField(blank=True,upload_to='images/')
@@ -77,8 +71,6 @@ class Brand(models.Model):
 
     def __str__(self):
         return self.title
-
-
 class Size(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -86,8 +78,6 @@ class Size(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Room_Type(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -95,8 +85,6 @@ class Room_Type(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Type(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -104,8 +92,6 @@ class Type(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Seat_Depth(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -113,8 +99,6 @@ class Seat_Depth(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Item_Shape(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -122,8 +106,6 @@ class Item_Shape(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Assembly(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -131,8 +113,6 @@ class Assembly(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Seat_Back_Interior_Height(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -140,8 +120,6 @@ class Seat_Back_Interior_Height(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Arm_Style(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -149,8 +127,6 @@ class Arm_Style(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Height(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -158,8 +134,6 @@ class Height(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Width(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -167,7 +141,6 @@ class Width(models.Model):
     
     def __str__(self):
         return self.title
-
 class Material(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -175,8 +148,6 @@ class Material(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Depth(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -184,8 +155,6 @@ class Depth(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Back_Style(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -193,8 +162,6 @@ class Back_Style(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Embellishment_Feature(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -202,8 +169,6 @@ class Embellishment_Feature(models.Model):
     
     def __str__(self):
         return self.title
-
-
 class Quality_Certification(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
