@@ -16,7 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin_thumbnails.thumbnail('image')
 class Sub_CategoryAdmin(admin.ModelAdmin):
-    list_display = ['title','featured_category', 'image','update_at','create_at']
+    list_display = ['title','featured_category', 'image_tag','update_at','create_at']
 
 
 class BrandAdmin(admin.ModelAdmin):

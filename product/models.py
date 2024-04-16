@@ -11,7 +11,7 @@ from django.utils.safestring import mark_safe
 
 class Main_Category(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     featured_category = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -27,7 +27,7 @@ class Main_Category(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=50)
     main_category = models.ForeignKey(Main_Category,on_delete=models.CASCADE)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     featured_category = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -43,7 +43,7 @@ class Category(models.Model):
 class Sub_Category(models.Model):
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     featured_category = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -58,7 +58,7 @@ class Sub_Category(models.Model):
         return self.title + '--' + self.category.title
 class Brand(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     featured_brand = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -177,7 +177,6 @@ class Quality_Certification(models.Model):
     def __str__(self):
         return self.title
 
-
 class Upholstery_Color(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -185,7 +184,6 @@ class Upholstery_Color(models.Model):
     
     def __str__(self):
         return self.title
-
 
 class Fill_Material(models.Model):
     title = models.CharField(max_length=50)
@@ -195,7 +193,6 @@ class Fill_Material(models.Model):
     def __str__(self):
         return self.title
 
-
 class Back_Style(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -203,7 +200,6 @@ class Back_Style(models.Model):
     
     def __str__(self):
         return self.title
-
 
 class Colour(models.Model):
     title = models.CharField(max_length=50)
@@ -213,7 +209,6 @@ class Colour(models.Model):
     def __str__(self):
         return self.title
 
-
 class Item_Width_Side_to_Side(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -222,7 +217,6 @@ class Item_Width_Side_to_Side(models.Model):
     def __str__(self):
         return self.title
 
-
 class Item_Depth_Front_to_Back(models.Model):
     title = models.CharField(max_length=50)
     create_at=models.DateTimeField(auto_now_add=True)
@@ -230,7 +224,6 @@ class Item_Depth_Front_to_Back(models.Model):
     
     def __str__(self):
         return self.title
-
 
 class Height_Base_to_Top(models.Model):
     title = models.CharField(max_length=50)
@@ -247,7 +240,6 @@ class Included_Components(models.Model):
     
     def __str__(self):
         return self.title
-
 
 class Pattern(models.Model):
     title = models.CharField(max_length=50)
