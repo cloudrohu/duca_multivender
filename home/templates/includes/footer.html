@@ -1,8 +1,59 @@
 <!-- footer-start -->
 {% load static %}
+{% for i in setting %}
+<!-- cta-area-start -->
+<section class="cta-area d-ldark-bg pt-55 pb-10" style="background-color:{{i.footer_color_1}};">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="cta-item cta-item-d mb-30">
+                    <h5 class="cta-title">Follow Us</h5>
+                    <p>We make consolidating, marketing and tracking your social media website easy.</p>
+                    <div class="cta-social">
+                        <div class="social-icon">
+                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="rss"><i class="fas fa-rss"></i></a>
+                            <a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="cta-item mb-30">
+                    <h5 class="cta-title">Sign Up To Newsletter</h5>
+                    <p>Join 60.000+ subscribers and get a new discount coupon  on every Saturday.</p>
+                    <div class="subscribe__form">
+                        <form action="#">
+                            <input type="email" placeholder="Enter your email here...">
+                            <button>subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="cta-item mb-30">
+                    <h5 class="cta-title">Download App</h5>
+                    <p>DukaMarket App is now available on App Store & Google Play. Get it now.</p>
+                    <div class="cta-apps">
+                        <div class="apps-store">
+                            <a href="#"><img src="{% static '' %}assets/img/brand/app_ios.png" alt=""></a>
+                            <a href="#"><img src="{% static '' %}assets/img/brand/app_android.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- cta-area-end -->
+
 <footer>
-    <div class="fotter-area d-dark-bg">
-        <div class="footer__top pt-80 pb-15">
+    <div class="fotter-area d-dark-bg" style="background-color:{{i.footer_color_2}};">
+        <div class="footer__top pt-80 pb-15" >
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-4 order-last-md">
@@ -102,13 +153,13 @@
                                                 </div>
                                                 <div class="text">
                                                     <h4>Got Question? Call us 24/7!</h4>
-                                                    <span><a href="tel:100-123-456-7890">(+100) 123 456 7890</a></span>
+                                                    <span><a href="tel:+91{{i.phone}}">(+91) {{i.phone}}</a></span>
                                                 </div>
                                             </div>
                                             <div class="footer__info">
                                                 <ul>
                                                     <li>
-                                                        <span>Add:  <a target="_blank" href="https://goo.gl/maps/c82DDZ8ALvL878Bv8">Walls Street 68, Mahattan, New York, USA</a></span>
+                                                        <span>Add:  <a target="_blank" href="{{i.google_map}}">{{i.address}}</a></span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -121,39 +172,17 @@
                 </div>
             </div>
         </div>
-        <div class="footer__bottom">
+        <div class="footer__bottom" >
             <div class="container">
                 <div class="footer__bottom-content pt-55 pb-45">
                     <div class="row">
                         <div class="col-xl-12">
-                            <div class="footer__links text-center mb-25">
-                                <p>
-                                    <a href="faq.html">Online Shopping</a>
-                                    <a href="faq.html">Promotions</a>
-                                    <a href="faq.html">My Orders</a>
-                                    <a href="faq.html">Help</a>
-                                    <a href="faq.html">Customer Service</a>
-                                    <a href="faq.html">Support</a>
-                                    <a href="faq.html">Most Populars</a>
-                                    <a href="faq.html">New Arrivals</a>
-                                    <a href="faq.html">Special Products </a>
-                                    <a href="faq.html">Manufacturers</a>
-                                    <br>
-                                    <a href="faq.html">Garden Equipments</a>
-                                    <a href="faq.html">Powers And Hand Tools </a>
-                                    <a href="faq.html">Utensil &amp; Gadget </a>
-                                    <a href="faq.html">Printers</a>
-                                    <a href="faq.html">Projectors</a>
-                                    <a href="faq.html">Scanners</a>
-                                    <a href="faq.html">Store</a>
-                                    <a href="faq.html">Business</a>
-                                </p>
-                            </div>
+                            
                             <div class="payment-image text-center mb-25">
                                 <a href="contact.html"><img src="{% static '' %}assets/img/payment/payment.png" alt=""></a>
                             </div>
                             <div class="copy-right-area text-center">
-                                <p>Copyright © <span>DukaMarket.</span> All Rights Reserved. Powered by <a href="#"><span class="main-color">Theme_Pure.</span></a></p>
+                                <p>Copyright © <span>{{i.company}}.</span> All Rights Reserved. Powered by <a target="_blank" href="https://bestchoicesolution.com/"><span class="main-color">Best Choice Solution.</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -162,6 +191,7 @@
         </div>
     </div>
 </footer>
+{% endfor %}
 <!-- footer-end -->
 
  

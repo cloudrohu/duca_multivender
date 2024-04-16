@@ -1,8 +1,9 @@
   
   {% load static %}
     <!-- header-start -->
+    {% for i in setting %}
     <header class="header d-blue-bg">
-        <div class="header-top">
+        <div class="header-top" style="background-color:{{i.nav_color_1}};">
             <div class="container">
                 <div class="header-inner">
                     <div class="row align-items-center">
@@ -32,7 +33,7 @@
                                     </select>
                                 </div>
                                 <div class="support d-none d-sm-block">
-                                    <p>Need Help? <a href="tel:+001123456789">+001 123 456 789</a></p>
+                                    <p>Need Help? <a href="tel:+91{{i.phone}}">{{i.phone}}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -52,14 +53,14 @@
                 </div>
             </div>
         </div>
-        <div class="header-mid">
+        <div class="header-mid" style="background-color:{{i.nav_color_2}};">
             <div class="container">
                 <div class="heade-mid-inner">
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
                             <div class="header__info">
                                 <div class="logo">
-                                    <a href="index.html" class="logo-image"><img src="{% static '' %}assets/img/logo/logo1.svg" alt="logo"></a>
+                                    <a href="{% url "index" %}" class="logo-image"><img src="{% static '' %}assets/img/logo/logo1.svg" alt="logo"></a>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +166,7 @@
                 </div>
             </div>
         </div>
-        <div class="header__bottom">
+        <div class="header__bottom" style="background-color:{{i.nav_color_3}};">
             <div class="container">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-3">                        
@@ -355,13 +356,13 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="index.html" class="active">Home <i class="far fa-angle-down"></i></a>
+                                        <a href="{% url "index" %}" class="active">Home <i class="far fa-angle-down"></i></a>
                                         <ul class="megamenu-1">
-                                            <li><a href="index.html">Home Pages</a>
+                                            <li><a href="{% url "index" %}">Home Pages</a>
                                                 <ul class="mega-item">
-                                                    <li><a href="index.html" class="active">Home One</a></li>
-                                                    <li><a href="index-2.html">Home Two</a></li>
-                                                    <li><a href="index-3.html">Home Three</a></li>
+                                                    <li><a href="{% url "index" %}" class="active">Home One</a></li>
+                                                    <li><a href="{% url "index" %}">Home Two</a></li>
+                                                    <li><a href="{% url "index" %}">Home Three</a></li>
                                                     <li><a href="product-details.html">Shop 3 Column</a></li>
                                                     <li><a href="product-details.html">Shop 4 Column</a></li>
                                                 </ul>
@@ -510,4 +511,5 @@
             </div>
         </div>
     </header>
+    {% endfor %}
     <!-- header-end -->
