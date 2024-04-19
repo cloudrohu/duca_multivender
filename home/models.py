@@ -101,10 +101,10 @@ class FAQ(models.Model):
 
 class Offer(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
-    image_2=models.ImageField(blank=True,upload_to='images/')
-    image_3=models.ImageField(blank=True,upload_to='images/')
-    image_4=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
+    image_2=models.ImageField(upload_to='images/')
+    image_3=models.ImageField(upload_to='images/')
+    image_4=models.ImageField(upload_to='images/')
     featured_project = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -120,7 +120,7 @@ class Offer(models.Model):
 
 class Slider(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     discount_deal = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
     link = models.CharField(max_length=50)    
@@ -140,7 +140,7 @@ class Slider(models.Model):
 
 class Banner(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
+    image=models.ImageField(upload_to='images/')
     discount_deal = models.CharField(max_length=50)
     link = models.CharField(max_length=50)    
     featured_project = models.BooleanField(default=False)
@@ -158,6 +158,7 @@ class Banner(models.Model):
 
 
 class Slide_Content(models.Model):
+    color = models.CharField(max_length=20)
     title = models.CharField(max_length=50)
     title_1 = models.CharField(max_length=50)
     title_2 = models.CharField(max_length=50)

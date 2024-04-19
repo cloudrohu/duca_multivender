@@ -4,6 +4,13 @@ import admin_thumbnails
 from .models import *
 # Register your models here.
 
+@admin_thumbnails.thumbnail('image')
+class ProductImageInline(admin.TabularInline):
+    list_display = ['id']
+    model = Images
+    readonly_fields = ('id',)
+    extra = 1
+
 
 @admin_thumbnails.thumbnail('image')
 class Main_CategoryAdmin(admin.ModelAdmin):
@@ -21,6 +28,18 @@ class Sub_CategoryAdmin(admin.ModelAdmin):
 
 class BrandAdmin(admin.ModelAdmin):
     list_display = ['title','image_tag','featured_brand','create_at','update_at',]
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['title','image_tag','featured_project', 'Top_Deals_Of_The_Day','Top_Selling_Products','Recommended_For_You','create_at','update_at',]
+    list_filter = ['category']
+    list_editable = ['featured_project', 'Top_Deals_Of_The_Day','Top_Selling_Products','Recommended_For_You']
+
+    inlines = [ProductImageInline,]
+
+admin.site.register(Product,ProductAdmin)
+
+
 
 
 admin.site.register(Main_Category,Main_CategoryAdmin)
@@ -42,3 +61,9 @@ admin.site.register(Depth)
 admin.site.register(Back_Style)
 admin.site.register(Embellishment_Feature)
 admin.site.register(Quality_Certification)
+
+admin.site.register(Images)
+admin.site.register(Comment)
+
+
+

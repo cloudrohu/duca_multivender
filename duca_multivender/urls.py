@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
+from home import views 
+
 
 
 urlpatterns = [
@@ -26,5 +28,14 @@ urlpatterns = [
 
 
     path('admin/', admin.site.urls),
+    path('about/', views.ABOUT, name='about'),
+    path('contact/', views.CONTACT, name='contact'),
+    path('product/', views.PRODUCT, name='product'),
+    path('product_details/', views.PRODUCT_DETAILS, name='product_details'),
+    path('brand/', views.BRAND, name='brand'),
+    path('faqs/', views.FQA, name='faqs'),
+    path('blogs/', views.BLOG, name='blogs'),
+    path('blog_details/', views.BLOG_DETAILS, name='blog_details'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
