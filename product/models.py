@@ -283,13 +283,13 @@ class Product(models.Model):
 
 
     title = models.CharField(max_length=150)
-    keywords = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
+    keywords = models.CharField(max_length=1255)
+    description = models.TextField(max_length=1255)
     image=models.ImageField(upload_to='images/',null=False)
     price=models.IntegerField(default=0)
     discount=models.IntegerField(default=3)
     detail=RichTextUploadingField()
-    slug = models.SlugField(null=False, unique=True)
+    slug = models.SlugField(null=True,blank=True, unique=True)
     status=models.CharField(max_length=10,choices=STATUS)
     featured_project = models.BooleanField(default=False)
     Top_Deals_Of_The_Day = models.BooleanField(default=False)

@@ -31,17 +31,12 @@ class BrandAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title','image_tag','featured_project', 'Top_Deals_Of_The_Day','Top_Selling_Products','Recommended_For_You','create_at','update_at',]
+    list_display = ['id','title','image_tag','featured_project', 'Top_Deals_Of_The_Day','Top_Selling_Products','Recommended_For_You', 'slug', 'create_at','update_at',]
     list_filter = ['category']
     list_editable = ['featured_project', 'Top_Deals_Of_The_Day','Top_Selling_Products','Recommended_For_You']
-
     inlines = [ProductImageInline,]
 
 admin.site.register(Product,ProductAdmin)
-
-
-
-
 admin.site.register(Main_Category,Main_CategoryAdmin)
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Sub_Category,Sub_CategoryAdmin)
@@ -61,7 +56,6 @@ admin.site.register(Depth)
 admin.site.register(Back_Style)
 admin.site.register(Embellishment_Feature)
 admin.site.register(Quality_Certification)
-
 admin.site.register(Images)
 admin.site.register(Comment)
 
